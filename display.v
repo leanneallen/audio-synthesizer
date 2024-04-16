@@ -2,18 +2,19 @@
 
 // Module which displays the current note being played to the
 // 7-segment display
-module display(freq, anode, segOut);
+module display(freq, an, segOut);
     input [11:0] freq;
-    output [3:0] anode;     // Controls the display digits
+    output [3:0] an;     // Controls the display digits
     output [6:0] segOut;    // Controls which digit to display
     
     // Output wires and registers
-    wire [3:0] anode;
+    wire [3:0] an;
     reg [6:0] segOut;
     
     // Only display the rightmost digit
-    assign anode = 4'b1110;
+    assign an = 4'b1110;
     
+    // NEED TO UPDATE VALUES ACCORDINGLY
     always @(freq) begin
         case (freq)                     // Musical notes:
             523 : segOut <= 7'b1000110; // C

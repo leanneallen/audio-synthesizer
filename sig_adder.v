@@ -37,6 +37,7 @@ module sig_adder(clk, sw, sig_square, sig_saw, sig_tri, sig_sine, sig);
         if (sw[3] == 1) begin
             sig_temp = sig_temp + sig_sine;
         end
+        
         // Generates random noise
         if (sw[4] == 1) begin
             sig_noise = { sig_noise[14:0], sig_noise[15] ^ sig_noise[14] ^ sig_noise[12] ^ sig_noise[3] };
